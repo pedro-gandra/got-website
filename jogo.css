@@ -1,0 +1,167 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.area {
+  width: 80vw;
+  height: 45vw;
+  border: 2px solid black;
+  position: relative;
+}
+
+#eu {
+  position: absolute;
+  display: block;
+  width: 6vw;
+}
+
+.waitTime {
+  animation: waitTime 200ms linear alternate infinite;
+}
+
+  @keyframes waitTime {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+.inimigos{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+
+.inimigos>*{
+  position: absolute;
+}
+
+#back {
+  text-align: right;
+}
+
+
+@keyframes ponto {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-120px);
+  }
+}
+
+@keyframes fade {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+@keyframes crescendo {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.5;
+  }
+  100%{
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}
+
+.oculto {
+  display: none;
+}
+
+.sumindo {
+  opacity: 0;
+  transition: all 600ms linear;
+}
+
+.numerinho {
+  position: absolute;
+  font-size: 2.9em;
+  font-weight: bold;
+  color: #8B0000;
+  pointer-events: none;
+  user-select: none;
+  animation: fade 1.6s cubic-bezier(.5,.25,.75,.5), ponto 3s cubic-bezier(.25,.5,.5,.75);
+}
+
+.escuro {
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 50 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 600ms linear;
+}
+
+.popUp {
+  animation: crescendo 1s linear;
+  z-index: 51 !important;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#death {
+  width: 60vw;
+  height: 40vw;
+  margin-left: 10vw;
+  margin-top: 2.5vw;
+  justify-content: center;
+}
+
+#death h1 {
+  color: #960018;
+  -webkit-text-stroke-width: 0.025em;
+  -webkit-text-stroke-color: #000;
+  font-size: 10.5em;
+  margin-bottom: 10vw;
+  font-family: 'Spicy Rice';
+}
+
+#death p {
+  font-size: 4.5em;
+}
+
+#death .num {
+  font-weight: bold;
+}
+
+#autor {
+  position: absolute;
+  left: 0;
+  font-size: 2em;
+  margin-left: 7px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+}
